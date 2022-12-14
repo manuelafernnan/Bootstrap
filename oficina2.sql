@@ -177,7 +177,57 @@ create table funcionario(
 	from servico
 	where dataentrada in ('2022-12-05', '2022-12-07');
 	
+	9)Mostrar a soma da quatidade das peças da oficina.
+
+	select sum(quantidade) from peca;
+
+	10)Mostrar o valor total em mercadorias no estoque.
 	
+	select sum(quantidade * preco) as 'Valor total do Estoque:' from peca; 
+
+	11)Calcular o valor médio das peças no estoque.
+
+	select avg(preco) as 'Média de Preços:' from peca;
+
+	12)Mostrar a peça com menor preço do estoque.
+
+	select min(preco) as 'Menor Preço' FROM peca;
+
+	13)Mostrar a peça com maior preço do estoque.
+
+	select max(preco) as 'Maior Preço' FROM peca;
+
+	14)Mostrar nome, telefone e qualificação de todos os funcionários.
+
+	select nome, telefone, qualificacao from funcionario;
+
+	15) Mostrar nome e telefone de todos os eletrecistas.
+
+	select nome, telefone, qualificacao from funcionario where qualificacao='eletricista';
+
+	16) Mostrar nome e preço de todos os produtos da marca frasle.
+
+	select nome, preco from peca where marca='frasle';
+
+	17) Mostrar ordem de serviço e preço pago de todos os serviços que foram pagos a vista 
+	no dia 01/12/2022
+
+	select ordemservico, preco
+	from servico 
+	where formapagamento='a vista' and dataentrada = '2022-12-01';
+
+	18) Pesquisar nome, telefone, nome da rua, número da casa, bairro e cidade de todos os clientes da oficina.
+
+	select cliente.nome, cliente.telefone, endereco.rua, cliente.numerocasa, endereco.bairro, endereco.cidade
+	from endereco inner join cliente
+	on endereco.cep = cliente.cep;
+
+	19) Pesquisar nome, telefone, placa e modelo do carro de todos os clientes.
+
+	select cliente.nome, cliente.telefone, veiculo.placa, veiculo.modelo 
+	from cliente inner join veiculo on cliente.cpf = veiculo.cpf
+
+
 	
 	
 	
