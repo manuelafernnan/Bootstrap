@@ -39,6 +39,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Fale Conosco</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin.php">Área do administrador</a>
+          </li>
         </ul>
 
       </div>

@@ -12,6 +12,10 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pecas.css">
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="admin.css">
+
+
 
   <title>Oficina Conserta Tudo</title>
 </head>
