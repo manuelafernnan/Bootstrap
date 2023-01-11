@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-    background-image: url('');
+    background-image: url('imagens/fundo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -76,12 +76,4 @@ html,body{
     .login_btn:hover{
     color: black;
     background-color: white;
-    }
-    
-    .links{
-    color: white;
-    }
-    
-    .links a{
-    margin-left: 4px;
     }
