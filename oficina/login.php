@@ -5,13 +5,16 @@
 ?>
 
 <?php
+	echo "senha".password_hash(123, PASSWORD_DEFAULT);
+
+
 	$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 	if(!empty($dados["btnlogin"])){
 		var_dump($dados);
 	}
 
-	$sql = "SELECT matricula, nome, usuario, senha FROM funcionario WHERE usuario =:usuario LIMIT 1";
+	$sql = "SELECT matricula, nome, email, senha FROM funcionario WHERE email =:usuario LIMIT 1";
 
 	$resultado= $conn->prepare($sql);
 	$resultado-> bindParam(':usuario', $dados['usuario'], PDO::PARAM_STR);
@@ -20,6 +23,12 @@
 	if (($resultado) AND ($resultado->rowCount() != 0)){
 		$linha = $resultado->fetch(PDO::FETCH_ASSOC);
 		var_dump($linha);
+
+		if(password_verify($dados['senha'], $linha['senha'])){
+
+			header("Location: admin.php");
+
+		}
 	}
 ?>
 
